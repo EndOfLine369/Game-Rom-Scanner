@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- http://www.file-extensions.org/filetype/extensions/name/emulator-files -->
+<platform-extensions>
+  <type name="PCs">
+    <platform name="Amstrad CPC"     year="1984"><extensions></extensions></platform>
+    <platform name="ZX Spectrum"     year="1982"><extensions>szx</extensions></platform>
+    <platform name="Commodore 64"    year="1982"><extensions>d64,g64,t64</extensions></platform>
+    <platform name="Commodore Amiga" year="1985"><extensions>uae,adf</extensions></platform>
+    <platform name="Macintosh"       year="Any"><extensions></extensions></platform>
+    <platform name="Windows"         year="Any"><extensions>exe</extensions></platform>
+  </type>
+  <type name="Phones">
+    <platform name="iOS"     year="Any"><extensions></extensions></platform>
+    <platform name="Android" year="Any"><extensions>apk</extensions></platform>
+  </type>
+  <type name="Home Consoles">
+    <platform name="Fairchild"                   year="1976"><extensions></extensions></platform>
+    <platform name="Magnavox Odyssey 2"          year="1978"><extensions></extensions></platform>
+    <platform name="Intellivision"               year="1979"><extensions>itv</extensions></platform>
+    <platform name="ColecoVision"                year="1982"><extensions>col</extensions></platform>
+    <platform name="TurboGrafx-16/PC Engine"     year="1987"><extensions>pce</extensions></platform>
+    <platform name="Philips CD-i"                year="1991"><extensions></extensions></platform>
+    <platform name="3DO Interactive Multiplayer" year="1993"><extensions></extensions></platform>
+    <platform name="Ouya"                        year="2012"><extensions></extensions></platform>
+    <!-- Atari -->
+    <platform name="Atari 2600"   year="1977"><extensions>a26</extensions></platform>
+    <platform name="Atari 8-bit"  year="1979"><extensions>atr</extensions></platform>
+    <platform name="Atari 5200"   year="1982"><extensions>a52</extensions></platform>
+    <platform name="Atari 7800"   year="1986"><extensions>a78</extensions></platform>
+    <platform name="Atari Jaguar" year="1993"><extensions>jag,j64,crg,srg</extensions></platform>
+    <platform name="Atari Falcon" year="1992"><extensions>ttp</extensions></platform>
+    <!-- Sega -->
+    <platform name="Sega Master System"      year="1985"><extensions></extensions></platform>
+    <platform name="Sega Genesis/Mega Drive" year="1988"><extensions>smd,32x,gsx,gs0,68k</extensions></platform>
+    <platform name="Sega CD/Mega-CD"         year="1991"><extensions></extensions></platform>
+    <platform name="Sega Saturn"             year="1994"><extensions></extensions></platform>
+    <platform name="Sega Dreamcast"          year="1998"><extensions>adx,pvr</extensions></platform>
+    <!-- Neo Geo -->
+    <platform name="Neo Geo Pocket"       year="1998"><extensions>ngp</extensions></platform>
+    <platform name="Neo Geo Pocket Color" year="1999"><extensions></extensions></platform>
+    <!-- XBox -->
+    <platform name="XBox"     year="2001"><extensions></extensions></platform>
+    <platform name="XBox 360" year="2005"><extensions>xex</extensions></platform>
+    <platform name="XBox One" year="2013"><extensions></extensions></platform>
+    <!-- Nintendo -->
+    <platform name="Nintendo NES"            year="1983"><extensions>nes,nez,fam,fds</extensions></platform>
+    <platform name="Nintendo SNES"           year="1990"><extensions>smc,sfc,swc</extensions></platform>
+    <platform name="Nintendo 64"             year="1996"><extensions>n64,a64,v64,z64,rdb</extensions></platform>
+    <platform name="Nintendo GameCube (NGC)" year="2001"><extensions>gci</extensions></platform>
+    <platform name="Nintendo Wii"            year="2006"><extensions>wdf</extensions></platform>
+    <platform name="Nintendo Wii U"          year="2012"><extensions></extensions></platform>
+    <!-- PlayStation -->
+    <platform name="PlayStation (PS1)"   year="1994"><extensions>psx</extensions></platform>
+    <platform name="PlayStation 2 (PS2)" year="2000"><extensions></extensions></platform>
+    <platform name="PlayStation 3 (PS3)" year="2006"><extensions></extensions></platform>
+    <platform name="PlayStation 4 (PS4)" year="2013"><extensions></extensions></platform>
+  </type>
+  <type name="Handheld Consoles">
+    <!-- Atari -->
+    <platform name="Atari Lynx" year="1989"><extensions>lnx</extensions></platform>
+    <!-- Sega -->
+    <platform name="Sega Game Gear" year="1990"><extensions>gg</extensions></platform>
+    <!-- Nintendo -->
+    <platform name="GameBoy (GB)"             year="1989"><extensions>gb,cgb,ggs,sa1</extensions></platform>
+    <platform name="GameBoy Color (GBC)"      year="1998"><extensions>gbc</extensions></platform>
+    <platform name="GameBoy Advanced (GBA)"   year="2001"><extensions>gba,sgb,agb,svs</extensions></platform>
+    <platform name="Visual Boy Advance (VBA)" year="2004"><extensions>vb,vbm,ups</extensions></platform>
+    <platform name="Nintendo DS"              year="2004"><extensions>nds,nd5</extensions></platform>
+    <platform name="Nintendo 3DS"             year="2011"><extensions></extensions></platform>
+    <!-- PlayStation -->
+    <platform name="PlayStation Portable (PSP)" year="2004"><extensions></extensions></platform>
+    <platform name="PlayStation Vita"           year="2011"><extensions></extensions></platform>
+    <!-- WonderSwan -->
+    <platform name="WonderSwan"       year="1999"><extensions>ws</extensions></platform>
+    <platform name="WonderSwan Color" year="2000"><extensions>wsc</extensions></platform>
+  </type>
+  <type name="Other">
+    <platform name="Flash"  year="Any"><extensions>swf</extensions></platform>
+    <platform name="Arcade" year="Any"><extensions>chd</extensions></platform>
+    <platform name="Unknown Platform" year="Any"><extensions>rom,bin,iso,cdi,cas</extensions></platform>
+  </type>
+</platform-extensions>
