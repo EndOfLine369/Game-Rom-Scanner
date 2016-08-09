@@ -43,12 +43,12 @@
     <platform name="XBox 360" year="2005"><extensions>xex</extensions></platform>
     <platform name="XBox One" year="2013"><extensions></extensions></platform>
     <!-- Nintendo -->
-    <platform name="Nintendo NES"            year="1983"><extensions>nes,nez,fam,fds</extensions></platform>
-    <platform name="Nintendo SNES"           year="1990"><extensions>smc,sfc,swc</extensions></platform>
-    <platform name="Nintendo 64"             year="1996"><extensions>n64,a64,v64,z64,rdb</extensions></platform>
-    <platform name="Nintendo GameCube (NGC)" year="2001"><extensions>gci</extensions></platform>
-    <platform name="Nintendo Wii"            year="2006"><extensions>wdf</extensions></platform>
-    <platform name="Nintendo Wii U"          year="2012"><extensions></extensions></platform>
+    <platform name="Nintendo NES"      year="1983"><extensions>nes,nez,fam,fds</extensions></platform>
+    <platform name="Nintendo SNES"     year="1990"><extensions>smc,sfc,swc</extensions></platform>
+    <platform name="Nintendo 64"       year="1996"><extensions>n64,a64,v64,z64,rdb</extensions></platform>
+    <platform name="Nintendo GameCube" year="2001"><extensions>gci</extensions></platform>
+    <platform name="Nintendo Wii"      year="2006"><extensions>wdf</extensions></platform>
+    <platform name="Nintendo Wii U"    year="2012"><extensions></extensions></platform>
     <!-- PlayStation -->
     <platform name="PlayStation (PS1)"   year="1994"><extensions>psx</extensions></platform>
     <platform name="PlayStation 2 (PS2)" year="2000"><extensions></extensions></platform>
