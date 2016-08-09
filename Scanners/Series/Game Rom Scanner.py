@@ -17,14 +17,17 @@ except ImportError:  from urllib2        import urlopen # urlopen Python 2.x #im
 LOGGING_LEVEL = logging.INFO
 LOG_FILENAME  = 'Plex Media Scanner (custom GameRS)'
 
-DUMMY_VIDEO_URL  = 'https://github.com/EndOfLine369/Game-Rom-Scanner/blob/master/resources/video/GameRSDummyVideo.mp4?raw=true'
+DUMMY_VIDEO_URL      = 'https://github.com/EndOfLine369/Game-Rom-Scanner/blob/master/resources/video/GameRSDummyVideo.mp4?raw=true'
 DUMMY_VIDEO_FILENAME = 'GameRSDummyVideo.mp4'
-DUMMY_VIDEO_FILE = ''
+DUMMY_VIDEO_FILE     = ''
 
 PLATFORM_EXTENSIONS_URL      = 'http://rawgit.com/EndOfLine369/Game-Rom-Scanner/master/resources/cfg/PlatformExtensions.xml'
-PLATFORM_FILE_SIGNATURES_URL = 'http://rawgit.com/EndOfLine369/Game-Rom-Scanner/master/resources/cfg/PlatformSignatures.xml'
+PLATFORM_EXTENSIONS_FILENAME = 'GameRS-tmp-PlatformExtensions.xml'
 PLATFORM_EXTENSIONS          = None
-PLATFORM_FILE_SIGNATURES     = None
+
+PLATFORM_FILE_SIGNATURES_URL      = 'http://rawgit.com/EndOfLine369/Game-Rom-Scanner/master/resources/cfg/PlatformSignatures.xml'
+PLATFORM_FILE_SIGNATURES_FILENAME = 'GameRS-tmp-PlatformSignatures.xml'
+PLATFORM_FILE_SIGNATURES          = None
 
 CHARACTERS_MAP = {}
 
@@ -91,14 +94,14 @@ def file_into_xml(local_file):
 #########################################################################################################
 def pull_extensions():
   global PLATFORM_EXTENSIONS, PLATFORM_FILE_SIGNATURES
-  pe_content = file_into_xml( pull_url_file(PLATFORM_EXTENSIONS_URL, 'GAMERS-tmp-PlatformExtensions.xml') )
+  pe_content = file_into_xml( pull_url_file(PLATFORM_EXTENSIONS_URL, PLATFORM_EXTENSIONS_FILENAME) )
   if pe_content is not None:
     PLATFORM_EXTENSIONS = {}
     for pf in pe_content.xpath("/platform-extensions/type/platform"):
       PLATFORM_EXTENSIONS[pf.get("name")] = [pf.get("year"), [ext2 for ext in pf.iter("extensions") if ext.text for ext2 in ext.text.split(",")]]
   else: raise Exception("Failed to load the PLATFORM_EXTENSIONS values")
   
-  ps_content = file_into_xml( pull_url_file(PLATFORM_FILE_SIGNATURES_URL, 'GAMERS-tmp-PlatformSignatures.xml') )
+  ps_content = file_into_xml( pull_url_file(PLATFORM_FILE_SIGNATURES_URL, PLATFORM_FILE_SIGNATURES_FILENAME) )
   if ps_content is not None:
     PLATFORM_FILE_SIGNATURES = {}
     for pf in ps_content.xpath("/platform-signarures/platform"):
