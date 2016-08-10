@@ -7,10 +7,11 @@ import tempfile         # NamedTemporaryFile
 from lxml import etree  # fromstring
 import zipfile          # ZipFile, is_zipfile
 import string           # capwords
-import Media            # Episode
+import Media            # Episode, Movie
 import Utils            # SplitPath
 import logging          # getLogger, Formatter, DEBUG, INFO
 import logging.handlers # RotatingFileHandler
+import inspect          # stack
 try:                 from urllib.request import urlopen # urlopen Python 3.0 and later
 except ImportError:  from urllib2        import urlopen # urlopen Python 2.x #import urllib2 # urlopen
 
@@ -176,9 +177,16 @@ def clean_string(string, no_parenthesis=False, no_dash=False):
   return string
 
 ### Add files into Plex database ########################################################################
-def add_into_plex(mediaList, file, ext, platform, title, year, season, ep):
+def add_into_plex(mediaList, is_movie, file, ext, platform, title, year, season, ep):
   Log.debug("add_into_plex: file='%s', platform='%s', season='%s', ep='%s', title='%s', year='%s'" % (file, platform, season, ep, title, year) )
-  if len(platform) == 0: Log.warning("platform: '%s', s%02de%03d, file: '%s' has platform empty, report logs to dev ASAP" % (platform, season, ep, file))
+  if len(platform) == 0: Log.warning("file: '%s' has platform empty, report logs to dev" % (file))
+  elif is_movie:
+    movie = Media.Movie("[%s] %s" % (platform, title), None)
+    movie.parts.append(file)
+    #movie.parts.append(DUMMY_VIDEO_FILE)
+    if year.isdigit(): movie.year = int(year)
+    mediaList.append(movie)
+    Log.info("\"%s\" => \"%s\" (%s)" % (movie, file, ext))
   else:
     tv_show = Media.Episode(platform, season, ep, title, int(year) if year.isdigit() else None)
     tv_show.parts.append(file)
@@ -294,7 +302,9 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None, **kwargs): #
 
   if path: return
   else:
-    Log.info("".ljust(157, '=')); Log.info("Sorting then adding in all files into Plex"); Log.info("".ljust(157, '='))
+    Log.info("".ljust(157, '=')); Log.info("Adding in all files into Plex"); Log.info("".ljust(157, '='))
+    is_movie = False if os.path.basename(os.path.dirname(inspect.stack()[0][1])) == "Series" else True
+    Log.info("Library is a '%s' type so adding in files as that type" % ("Movie" if is_movie else "TV Shows"))
     plex_entries = sorted(plex_entries, key=lambda x: "%s s%04de%03d" % (x[2], x[5], x[6]))
-    for entry in plex_entries:  add_into_plex(mediaList, entry[0], entry[1], entry[2], entry[3], entry[4], entry[5], entry[6])
+    for entry in plex_entries:  add_into_plex(mediaList, is_movie, entry[0], entry[1], entry[2], entry[3], entry[4], entry[5], entry[6])
     for entry in mediaList:     Log.debug("'mediaList' Entry: %s" % entry)
