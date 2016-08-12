@@ -4,7 +4,7 @@
     <signarure address="0"  >0xaa55</signarure> <!-- address=int('0x0',   16) -->
     <signarure address="0"  >0x55aa</signarure> <!-- address=int('0x0',   16) -->
   </platform>
-  <platform name="Nintendo NES">
+  <platform name="Nintendo Entertainment System">
     <signarure address="0"  >0x4e45531a</signarure> <!-- address=int('0x0',   16) -->
   </platform>
   <platform name="Sega Genesis/Mega Drive">
