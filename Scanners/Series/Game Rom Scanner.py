@@ -190,7 +190,7 @@ def add_into_plex(mediaList, is_movie, file, ext, platform, title, year, season,
   else:
     tv_show = Media.Episode(platform, season, ep, title, int(year) if year.isdigit() else None)
     tv_show.parts.append(file)
-    tv_show.parts.append(DUMMY_VIDEO_FILE)
+    #tv_show.parts.append(DUMMY_VIDEO_FILE)
     mediaList.append(tv_show)
     Log.info("\"%s\" s%04de%03d \"%s\" \"%s\" (%s)" % (platform, season, ep, os.path.basename(file), title, ext))
     Log.debug(tv_show)
@@ -203,8 +203,8 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None, **kwargs): #
     set_logging("FileList", LOG_FILENAME + ' - filelist ' + os.path.basename(root) + ".log")
     LogFileList("".ljust(157, '=')); LogFileList("==== Starting File Scan (root:%s) ====" % root); LogFileList("".ljust(157, '='))
     pull_extensions()
-    global DUMMY_VIDEO_FILE
-    DUMMY_VIDEO_FILE = pull_url_file(DUMMY_VIDEO_URL, DUMMY_VIDEO_FILENAME)
+    #global DUMMY_VIDEO_FILE
+    #DUMMY_VIDEO_FILE = pull_url_file(DUMMY_VIDEO_URL, DUMMY_VIDEO_FILENAME)
 
   Log.info("".ljust(157, '=')); Log.info("Scanner call - root: '%s', path: '%s', dirs: '%d', files: '%d'" % (root, path, len(subdirs), len(files))); Log.info("".ljust(157, '='))
   for file   in files:    LogFileList(file)                     # Dump to the log all files passed
